@@ -7,7 +7,7 @@
     <title>Egli</title>
 </head>
 <body>
-    <h1>welcome to Egli url shortner</h1>    
+    <h1>welcome to Igli url shortner</h1>    
     <form action="/shortUrls" method="POST">
         <label for="url">Enter your url</label>
         <input type="text" name="url" placeholder="enter url">
@@ -19,7 +19,18 @@
             <th>short url</th>
             <th>clicks</th>
         </tr>
+        <tbody>
+            <% for(let shortUrl of shortUrls){ %>
+                <tr>
+                    <td><%= shortUrl.full %></td>
+                    <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                    <td><%= shortUrl.clicks %></td>
+                </tr>
+            <% } %>
+        </tbody>
+
     </table>
+
 
 </body>
 </html> 
